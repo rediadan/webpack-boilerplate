@@ -29,20 +29,24 @@ export default class Round extends Phaser.Scene {
         };
 
         this.player = new Player(this, center.x, height * 1/4);
+
+        const box = this.physics.add.image(center.x, height * 1/2, 'test');
+        box.setScale(0.3);
+        box.body.allowGravity = false;
+        box.body.moves = false;
+        box.body.immovable = true;
+
         
-        this.input.on(Phaser.Input.Events.POINTER_UP,this.handlePointerUp,this);
+
+       
+        this.physics.add.collider(box, this.player);
+
+
+
     }
 
-    handlePointerUp()
-    {
-        this.tweens.add({
-                targets:this.player,
-                angle:this.player.angle+50,
-                duration:500
-            });
-    }
 
     update(){
-        this.player.angle++;
+
     }
 }

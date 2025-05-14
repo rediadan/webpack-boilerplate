@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import Round from '@/js/Round';
 import Loading from '@/js/Loading';
 
+// WORLD SETTING (Like Gravity)
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -15,6 +16,7 @@ const config =
         default:'arcade',
         arcade:{
             debug:true,
+            gravity: { y: 600 }
         }
     },
     scale:{
