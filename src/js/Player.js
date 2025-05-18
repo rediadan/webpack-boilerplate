@@ -22,7 +22,7 @@ export default class Monster extends Phaser.Physics.Arcade.Image{
 
         this.on('pointerdown',() =>
         {
-            this.y -= -5;
+            this.setVelocityY(-300);
             
         })
         
@@ -38,7 +38,7 @@ export default class Monster extends Phaser.Physics.Arcade.Image{
     preUpdate()
     {//갱신
         if(this.key.up.isDown && this.body.touching.down){
-            this.setVelocityY(-300);
+            this.setVelocityY(-300); // -방향이 상단인듯. Gravity가 +, 양수.
         }
 
         if(this.key.left.isDown){

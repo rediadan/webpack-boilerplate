@@ -5,8 +5,8 @@ import Loading from '@/js/Loading';
 
 // WORLD SETTING (Like Gravity)
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = 1920//window.innerWidth;
+const height = 1080//window.innerHeight;
 const config =  
 {
     type:Phaser.AUTO,
@@ -25,7 +25,7 @@ const config =
         width:width,
         height:height,
     },
-    scene:[Round,Loading]
+    scene:[Loading,Round]
 }
 
 
